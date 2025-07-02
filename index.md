@@ -9,7 +9,7 @@ title:
   </div> -->
   <div class="profile-content">
     <p>
-      Run by <a href="https://austin-wu.com/">Austin Wu</a>, <a href="https://www.linkedin.com/in/achyuth-k-vivek-15357b326/">Achyuth Vivek</a>, <a href="https://www.linkedin.com/in/caroline-zhu-cu2026/">Caroline Zhu</a>, and <a href="https://https://www.maxxyung.com/">Maxx Yung</a>,
+      Run by <a href="https://austin-wu.com/">Austin Wu</a>, <a href="https://www.linkedin.com/in/achyuth-k-vivek-15357b326/">Achyuth Vivek</a>, <a href="https://www.linkedin.com/in/caroline-zhu-cu2026/">Caroline Zhu</a>, and <a href="https://www.maxxyung.com/">Maxx Yung</a>,
     </p>
     <p><code><span data-encoding="cHVibGljQGZ1bmRuYW1lLmNvbQ==" id="e1"></span></code> </p>
     <p><code><span data-encoding="YXVzdGluQGZ1bmRuYW1lLmNvbQ==" id="e1"></span></code> </p>
