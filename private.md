@@ -4,10 +4,10 @@ title: Internal Directory
 ---
 Obfuscated directory to parts of website:
 
-[About](/about)
+[About]({{ '/about' | relative_url }})
 
-[Fellows](/fellows)
+[Fellows]({{ '/fellows' | relative_url }})
 
-[Thesis](/thesis)
+[Thesis]({{ '/thesis' | relative_url }})
 
-[Updates](/thesis)
+[Updates]({{ '/updates' | relative_url }})
