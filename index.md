@@ -12,7 +12,7 @@ title:
       We are starting a VC Firm
     </p>
     <p>
-      Run by Austin Wu, Achyunth Vivek, Caroline Zhu, and Maxx Yung.
+      Run by [Austin Wu](), Achyunth Vivek, Caroline Zhu, and Maxx Yung.
     </p>
     <p>
       We will reach out if you respond:
