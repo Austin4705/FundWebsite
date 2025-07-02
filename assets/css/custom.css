@@ -1,0 +1,337 @@
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.profile-image-container {
+  margin-right: 20px;
+  text-align: center;
+}
+
+.profile-image {
+  max-width: 250px;
+  border-radius: 10%;
+  margin-bottom: 5px;
+}
+
+.profile-caption {
+  font-size: 0.8em;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.profile-content {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-image-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image {
+    max-width: 200px;
+  }
+}
+
+/* Get rid of that bar */
+.site-header {
+  border-top: none;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: white;
+  min-height: 55.95px;
+  position: relative;
+}
+
+.site-title {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+  color: #424242;
+}
+
+.site-nav {
+  float: right;
+  line-height: 54px;
+}
+
+.site-nav .page-link {
+  color: #424242;
+  line-height: 1.5;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #2d3748; /* Dark Slate Gray */
+  color: #e2e8f0; /* Light Gray */
+}
+
+body.dark-mode a {
+  color: #63b3ed; /* Sky Blue */
+}
+
+body.dark-mode .site-header {
+  background-color: #1a202c; /* Darker Slate Gray */
+  border-bottom-color: #4a5568; /* Gray */
+}
+
+body.dark-mode .site-title {
+  color: #e2e8f0; /* Light Gray */
+}
+
+body.dark-mode .page-link {
+  color: #63b3ed; /* Sky Blue */
+}
+
+body.dark-mode .page-link:hover {
+  color: #e2e8f0; /* Light Gray */
+}
+
+body.dark-mode .post-link {
+  color: #63b3ed; /* Sky Blue */
+}
+
+body.dark-mode .post-meta {
+  color: #a0aec0; /* Cool Gray */
+}
+
+body.dark-mode .footer {
+  border-top-color: #4a5568; /* Gray */
+}
+
+body.dark-mode .footer-col-heading {
+  color: #e2e8f0; /* Light Gray */
+}
+
+/* Syntax Highlighting Dark Mode */
+body.dark-mode .highlight {
+  background-color: #1a202c; /* Darker Slate Gray for code blocks */
+  color: #e2e8f0; /* Light Gray for default code text */
+}
+/* Blockquote styling for better visibility */
+body.dark-mode blockquote {
+  border-left: 4px solid #63b3ed; /* Sky Blue border */
+  background-color: #2d3748; /* Slightly different background */
+  color: #e2e8f0; /* Light Gray text */
+  padding: 10px 15px;
+  margin: 15px 0;
+}
+
+body.dark-mode blockquote p {
+  color: #e2e8f0; /* Ensure paragraph text in blockquotes is light */
+  margin: 0;
+}
+
+/* Light mode blockquote styling for consistency */
+blockquote {
+  border-left: 4px solid #424242;
+  background-color: #f8f9fa;
+  color: #424242;
+  padding: 10px 15px;
+  margin: 15px 0;
+}
+
+blockquote p {
+  color: #424242;
+  margin: 0;
+}
+
+/* Code element styling for dark mode */
+body.dark-mode code {
+  background-color: #1a202c; /* Darker Slate Gray */
+  color: #e2e8f0; /* Light Gray */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Light mode code styling for consistency */
+code {
+  background-color: #f8f9fa;
+  color: #424242;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+body.dark-mode .highlight .c { color: #718096; } /* Comment - Cool Gray */
+body.dark-mode .highlight .err { color: #f56565; background-color: #4a1d1d; } /* Error - Red */
+body.dark-mode .highlight .k { color: #63b3ed; } /* Keyword - Sky Blue */
+body.dark-mode .highlight .l { color: #9f7aea; } /* Literal - Purple */
+body.dark-mode .highlight .n { color: #e2e8f0; } /* Name - Light Gray */
+body.dark-mode .highlight .o { color: #ed8936; } /* Operator - Orange */
+body.dark-mode .highlight .p { color: #e2e8f0; } /* Punctuation - Light Gray */
+body.dark-mode .highlight .ch { color: #718096; } /* Comment.Hashbang - Cool Gray */
+body.dark-mode .highlight .cm { color: #718096; } /* Comment.Multiline - Cool Gray */
+body.dark-mode .highlight .cp { color: #718096; } /* Comment.Preproc - Cool Gray */
+body.dark-mode .highlight .cpf { color: #718096; } /* Comment.PreprocFile - Cool Gray */
+body.dark-mode .highlight .c1 { color: #718096; } /* Comment.Single - Cool Gray */
+body.dark-mode .highlight .cs { color: #718096; } /* Comment.Special - Cool Gray */
+body.dark-mode .highlight .gd { color: #f56565; } /* Generic.Deleted - Red */
+body.dark-mode .highlight .ge { font-style: italic; } /* Generic.Emph */
+body.dark-mode .highlight .gi { color: #48bb78; } /* Generic.Inserted - Green */
+body.dark-mode .highlight .gs { font-weight: bold; } /* Generic.Strong */
+body.dark-mode .highlight .gu { color: #718096; } /* Generic.Subheading - Cool Gray */
+body.dark-mode .highlight .kc { color: #63b3ed; } /* Keyword.Constant - Sky Blue */
+body.dark-mode .highlight .kd { color: #63b3ed; } /* Keyword.Declaration - Sky Blue */
+body.dark-mode .highlight .kn { color: #ed8936; } /* Keyword.Namespace - Orange */
+body.dark-mode .highlight .kp { color: #63b3ed; } /* Keyword.Pseudo - Sky Blue */
+body.dark-mode .highlight .kr { color: #63b3ed; } /* Keyword.Reserved - Sky Blue */
+body.dark-mode .highlight .kt { color: #63b3ed; } /* Keyword.Type - Sky Blue */
+body.dark-mode .highlight .ld { color: #faf089; } /* Literal.Date - Yellow */
+body.dark-mode .highlight .m { color: #9f7aea; } /* Literal.Number - Purple */
+body.dark-mode .highlight .s { color: #faf089; } /* Literal.String - Yellow */
+body.dark-mode .highlight .na { color: #48bb78; } /* Name.Attribute - Green */
+body.dark-mode .highlight .nb { color: #e2e8f0; } /* Name.Builtin - Light Gray */
+body.dark-mode .highlight .nc { color: #48bb78; } /* Name.Class - Green */
+body.dark-mode .highlight .no { color: #63b3ed; } /* Name.Constant - Sky Blue */
+body.dark-mode .highlight .nd { color: #48bb78; } /* Name.Decorator - Green */
+body.dark-mode .highlight .ni { color: #e2e8f0; } /* Name.Entity - Light Gray */
+body.dark-mode .highlight .ne { color: #48bb78; } /* Name.Exception - Green */
+body.dark-mode .highlight .nf { color: #48bb78; } /* Name.Function - Green */
+body.dark-mode .highlight .nl { color: #e2e8f0; } /* Name.Label - Light Gray */
+body.dark-mode .highlight .nn { color: #e2e8f0; } /* Name.Namespace - Light Gray */
+body.dark-mode .highlight .nx { color: #48bb78; } /* Name.Other - Green */
+body.dark-mode .highlight .py { color: #e2e8f0; } /* Name.Property - Light Gray */
+body.dark-mode .highlight .nt { color: #ed8936; } /* Name.Tag - Orange */
+body.dark-mode .highlight .nv { color: #e2e8f0; } /* Name.Variable - Light Gray */
+body.dark-mode .highlight .ow { color: #ed8936; } /* Operator.Word - Orange */
+body.dark-mode .highlight .pm { color: #e2e8f0; } /* Punctuation.Marker - Light Gray */
+body.dark-mode .highlight .w { color: #e2e8f0; } /* Text.Whitespace - Light Gray */
+body.dark-mode .highlight .mb { color: #9f7aea; } /* Literal.Number.Bin - Purple */
+body.dark-mode .highlight .mf { color: #9f7aea; } /* Literal.Number.Float - Purple */
+body.dark-mode .highlight .mh { color: #9f7aea; } /* Literal.Number.Hex - Purple */
+body.dark-mode .highlight .mi { color: #9f7aea; } /* Literal.Number.Integer - Purple */
+body.dark-mode .highlight .mo { color: #9f7aea; } /* Literal.Number.Oct - Purple */
+body.dark-mode .highlight .sa { color: #faf089; } /* Literal.String.Affix - Yellow */
+body.dark-mode .highlight .sb { color: #faf089; } /* Literal.String.Backtick - Yellow */
+body.dark-mode .highlight .sc { color: #faf089; } /* Literal.String.Char - Yellow */
+body.dark-mode .highlight .dl { color: #faf089; } /* Literal.String.Delimiter - Yellow */
+body.dark-mode .highlight .sd { color: #faf089; } /* Literal.String.Doc - Yellow */
+body.dark-mode .highlight .s2 { color: #faf089; } /* Literal.String.Double - Yellow */
+body.dark-mode .highlight .se { color: #9f7aea; } /* Literal.String.Escape - Purple */
+body.dark-mode .highlight .sh { color: #faf089; } /* Literal.String.Heredoc - Yellow */
+body.dark-mode .highlight .si { color: #faf089; } /* Literal.String.Interpol - Yellow */
+body.dark-mode .highlight .sx { color: #faf089; } /* Literal.String.Other - Yellow */
+body.dark-mode .highlight .sr { color: #faf089; } /* Literal.String.Regex - Yellow */
+body.dark-mode .highlight .s1 { color: #faf089; } /* Literal.String.Single - Yellow */
+body.dark-mode .highlight .ss { color: #faf089; } /* Literal.String.Symbol - Yellow */
+body.dark-mode .highlight .bp { color: #e2e8f0; } /* Name.Builtin.Pseudo - Light Gray */
+body.dark-mode .highlight .fm { color: #48bb78; } /* Name.Function.Magic - Green */
+body.dark-mode .highlight .vc { color: #e2e8f0; } /* Name.Variable.Class - Light Gray */
+body.dark-mode .highlight .vg { color: #e2e8f0; } /* Name.Variable.Global - Light Gray */
+body.dark-mode .highlight .vi { color: #e2e8f0; } /* Name.Variable.Instance - Light Gray */
+body.dark-mode .highlight .vm { color: #e2e8f0; } /* Name.Variable.Magic - Light Gray */
+body.dark-mode .highlight .il { color: #9f7aea; } /* Literal.Number.Integer.Long - Purple */
+
+/* Dark Mode Table Styles */
+body.dark-mode table {
+  border-collapse: collapse; /* Ensures borders are neat */
+  width: 100%; /* Optional: makes table take full width */
+  margin-bottom: 1rem; /* Optional: adds some space below the table */
+  border: 1px solid #4a5568; /* Gray border for the table */
+}
+
+body.dark-mode th,
+body.dark-mode td {
+  border: 1px solid #4a5568; /* Gray borders for cells */
+  padding: 0.5rem 0.75rem; /* Padding inside cells */
+  text-align: left; /* Align text to the left, adjust as needed */
+  color: #e2e8f0; /* Light Gray text for cells */
+}
+
+body.dark-mode th {
+  background-color: #2d3748; /* Darker Slate Gray for headers (same as body background or slightly darker) */
+  color: #cbd5e0; /* Slightly brighter gray for header text for emphasis */
+  font-weight: bold;
+}
+
+body.dark-mode tr:nth-child(even) td {
+  /* Optional: slightly different background for even rows for readability */
+  /* background-color: #3a4759; */ /* A slightly lighter shade than the default cell background */
+}
+
+body.dark-mode tr td {
+  background-color: #374151; /* Slightly lighter than header, but darker than page for data cells */
+}
+
+/* Theme Switch Slider Styles */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Default background of the slider track */
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+/* Switch between sun and moon icons based on dark mode state */
+input:checked + .slider:before {
+  content: "🌑"; /* Moon icon when in light mode */
+  transform: translateX(26px); /* Move right and reset rotation */
+}
+
+input:not(:checked) + .slider:before {
+  content: "🌕️"; /* Sun icon when in dark mode */
+}
+
+.slider:before {
+  position: absolute;
+  height: 18px; /* Height of the slider thumb */
+  width: 18px; /* Width of the slider thumb */
+  left: 3px; /* Position of the thumb from left */
+  bottom: 3px; /* Position of the thumb from bottom */
+  background-color: white; /* Color of the slider thumb */
+  -webkit-transition: .4s;
+  transition: .4s;
+  display: flex; /* To center icon content */
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Adjust icon size as needed */
+  line-height: 1; /* Ensure icon is vertically centered */
+  transform: rotate(180deg); /* Rotate the moon emoji */
+  transform-origin: center; /* Ensure rotation happens around center */
+}
+
+input:checked + .slider {
+  background-color: #63b3ed;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #63b3ed;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 24px; /* Make the track rounded */
+}
+
+.slider.round:before {
+  border-radius: 50%; /* Make the thumb rounded */
+}

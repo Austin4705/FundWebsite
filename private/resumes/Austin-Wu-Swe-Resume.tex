@@ -1,0 +1,213 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% \input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Austin Wu} \\ \vspace{1pt}
+    \small \href{mailto:x@x.com}{\underline{resume@austin-wu.com}} $|$ 
+    % \small 408-759-2478 $|$ \href{mailto:x@x.com}{\underline{amw423@cornell.edu}} $|$ 
+    \href{https://www.linkedin.com/in/austin--wu/}{\underline{linkedin.com/in/austin--wu/}} $|$
+    \href{https://github.com/Austin4705}{\underline{github.com/Austin4705}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+          {Cornell University}{Ithaca, New York}
+          {Dual Major: Bachelor of Science in Computer Science and Applied Physics}{Graduation Date: May 2026}
+          \resumeItem{Relevant Courseowrk: Math2230, Math2240, CS4999, AEP3200}
+          
+            \textbf{Awards:} USACO Platinum Competitior,     \textbf{Hackathons Won:} Masseyhacks, Los Altos Hacks, Teenhacks LI
+        
+    \resumeSubHeadingListEnd
+    
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Founding Engineer}{September 2024 -- Present}
+      {Deepsilicon (YC24)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Working on a custom TPU on a FPGA using a quantized 1.5bit architecture to achieve performance speedups.}
+        \resumeItem{Implemented Berkeley Hardfloat with for high performance FPU operations}
+        \resumeItem{Creating nontrivial optimizations like Chebyshev polynomial approximations for certain algorithms}
+        \resumeItem{Set up the FPGA compilation build chain.}
+    \resumeItemListEnd\textbf{}
+    
+    \resumeSubheading
+      {Developer}{January 2024 -- Present}
+      {Ken Birman Lab of Distributed Systems}{Ithaca, NY}
+      \resumeItemListStart
+        \resumeItem{Ran internal experimentation using CUDA to optimize caching for large scale matrix multiplication.}
+        \resumeItem{Contributed to the Cascade Project by developing a fast vector database using FUSE for RAG.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Researcher}{October 2023 -- Present}
+      {Yasuda Lab 2D Quantum Nanomaterials}{Ithaca, NY}
+      \resumeItemListStart
+        \resumeItem{Developed a full-stack web application using OpenCV, React, Flask, and MongoDB to automate the transfer station machine allowing for exponential speedup of device creation.}
+        \resumeItem{Created Non-trivial Computer Vision algorithms for Monolayer Graphene flake detection using color quantization and Machine Learning.}
+        \resumeItem{Implemented Complex Control Theory Algorithms such as Model Predictive Control to allow for reliable automatic of the stacking process.}
+    \resumeItemListEnd\textbf{}
+    
+    \resumeSubheading
+      {Co Founder and Vice President}{December 2023 -- Present}
+      {Quantum Computing Association at Cornell}{Ithaca, NY}
+      \resumeItemListStart
+        \resumeItem{Contributed to a simulator for Topological Quantum Computing in Python and Rust finds the Isomorphism between the matrix and Topological-Braiding representations of Quantum Computing.}
+        \resumeItem{Led development on a building a Neutral Atom Quantum Computer from scratch by building a cheap MOT.}
+    \resumeItemListEnd\textbf{}
+
+    \resumeSubheading
+      {Researcher}{June 2023 -- September 2023}
+      {Independent Collaborator}{Remote}
+      \resumeItemListStart
+        \resumeItem{Collaborated with Northwestern Professor Seda Memik on a novel in parallel computing architecture with SystemVerilog to create large speedups in computationally intensive workflows. Project was provisionally patented.}
+    \resumeItemListEnd\textbf{}
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Cornell Math Modeling Competition Submission} $|$ \emph{C++, Python, LaTeX}}{November 2024 -- November 2024}
+          \resumeItemListStart
+            \resumeItem{Developed a custom multi-threaded architecture for running heavy simulations in C++ to visualize the spread of Lanturnflies in vineyard populations }
+            \resumeItem{Did data analysis in python and wrote up a 40 page paper on the results}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{HeartPal} $|$ \emph{Dart, Flutter, Python, Flask, C/C++, Keras, Git}}{May 2022 -- September 2022}
+          \resumeItemListStart
+            \resumeItem{Developed a digital stethoscope that connected with a app in Flutter that communicated with a custom LSTM and Hidden Markov Machine Learning model in order to automatically detect irregularities with patients heartbeats.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Python, JavaScript/HTML/CSS, Java, C\#, Rust, Verilog, SystemVerilog} \\
+     \textbf{Frameworks}{: CUDA, React/Next, Node.js, Express, MongoDB, Flask, Django, Tailwind} \\
+     \textbf{Developer Tools}{: Git, Docker, AWS, Jenkins} \\
+     \textbf{Libraries}{: Pandas, NumPy, Matplotlib, OpenCV, PyTorch, Sci-Kit, TensorFlow}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

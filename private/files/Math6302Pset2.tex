@@ -1,0 +1,338 @@
+\documentclass[12pt]{amsart}
+\usepackage{austin}
+
+\title{Math 6302 Pset 2}
+
+\author{Rishi Gujjar}
+\author{Eric Yachbes}
+
+\begin{document}
+  \maketitle
+  \begin{problem}
+    \begin{subproblem}
+    Now since there are $n+1$ vectors in a series of vectors of rank $n$ implies since there for any point in the lattice it can be created with 
+    \[n_1 \hat b_1+\cdots+n_{i-1}\hat b_{i-1}+n_{i+1}\hat b_{i+1} + \cdots + n_{n+1} \hat b_{n+1} \] 
+
+     Now since by definition a lattice of rank $n$ is created by $n$ basis vectors and this set of vectors is a basis for the lattice, then there will exist some basis vector such that removing it sitll generates the lattice. Let this vector be $b_i$. Now given $n_i b_i$ since $n_i b_i \in \lat$, there is some equivalent construction  
+    $n_1 \hat b_1+\cdots+n_{i-1}\hat b_{i-1}+n_{i+1}\hat b_{i+1} + \cdots + n_{n+1} \hat b_{n+1} $ since 
+    \[\forall p\in\lat,\,\exists n_1,\cdots n_{i-1},n_{i+1},\cdots,n_{n+1}\]
+    \[n_1 \hat b_1+\cdots+n_{i-1}\hat b_{i-1}+n_{i+1}\hat b_{i+1} + \cdots + n_{n+1} \hat b_{n+1} = p\]
+
+    This implies that there are a set of integers such that 
+    \[n_1 \hat b_1+\cdots+n_{i-1}\hat b_{i-1}+n_{i+1}\hat b_{i+1} + \cdots + n_{n+1} \hat b_{n+1} = n_i\hat b_i \]
+    which is the same thing as saying 
+    \[n_1 \hat b_1+\cdots+n_{i-1}\hat b_{i-1}+n_{i+1}\hat b_{i+1} + \cdots + n_{n+1} \hat b_{n+1} - n_i\hat b_i =0 \]
+
+    and thus we have showed a set of integers such that the linear combination of them is equal to 0. Now since the integers is a subset of the rational numbers implies that we have a set of rational numbers such that 
+    \[\sum_{i=1}^{n+1}q_i \hat b_i = 0\]
+  which directly implies $\Q$-linear dependence. 
+    \end{subproblem}
+    \begin{subproblem}
+      Now since $b_{n+1}\in \Span(b_1,\cdots,b_n)$ implies there exists $\hat c\in \R^n$ such that 
+      \[b_{n+1}= \sum_{k=1}^i c_k b_k\]
+    And thus rearranging 
+    \[b_i = \frac1{c_i} \ab(b_{n+1}- \sum_{k=1}^{i-1} c_k b_k)\].
+
+    Now this implies since span is the set of linear combination of all the vectors, given $\forall \hat t \in\Span(b_1,\cdots,b_i)$, let 
+    \[\hat t = \sum_{k=1}^i a_i k_i\]
+    for any aribtary coefficents $c_i\in \R$. Which is guarenteed to exist by definition of span. Then 
+    \[\hat t = \sum_{k=1}^i a_k b_k = \]
+    \[\sum_{k=1}^{i-1}a_k b_k + a_i b_i = \sum_{k=1}^{i-1}a_k b_k + a_i(\frac1{c_i} \ab(b_{n+1}- \sum_{k=1}^{i-1} c_k b_k))\] 
+    Which consists of a linear sum of vectors entirely inside of $\Span(b_1,\cdots,b_{i-1},b_{n+1})$ and thus any vector in $\Span(b_1,\cdots,b_i)$ can be represetned by a sum of vectors in $\Span(b_1,\cdots,b_{i-1},b_{n+1})$. Which implies it is in that span.
+
+
+    Now suppose $\forall \hat v\in \Span(b_1,\cdots,b_{i-1},b_{n+1})$. Then there is guarenteed by definition of span to exist some combination 
+    \[\hat v = a_{n+1} b_{n+1}+ \sum_{k=1}^{i-1} a_k b_k\]
+    Then 
+    \[= a_{n+1}\sum_{k=1}^i c_k b_k + + \sum_{k=1}^{i-1} a_k b_k\]
+    Which consists of a linear sum of vectors entirely inside of $\Span(b_1,\cdots,b_i)$ and thus any vector in $\Span(b_1,\cdots,b_{i-1},b_{n+1})$ can be represetned by a sum of vectors in $\Span(b_1,\cdots,b_i)$. Which implies it is in that span.
+
+    Thus we have proved both directions so it implies a vector in one span can be represetned in the other span so we proved equality 
+    \[\Span(b_1,\cdots,b_i)=\Span(b_1,\cdots,b_{i-1},b_{n+1})\]
+    \end{subproblem}
+    \begin{subproblem}
+      Now given the procedure listed above as assume initally that $b_1,\cdots,b_n$ are linearly independent. Then at each procedure
+      \begin{enumerate}
+        \item Size reduction: This step does not affect set of vectors from $b_1,\cdots b_n$.
+        \item Output step: This step doesnt change the set of vectors so it keeps them independent
+        %Now since the vector is size reduced implies $|\mu_{i,n+1}|\leq \frac12$. Now since if we size reduce implies that $\ab<\tilde{b}_i,b_{n+1}>/\ab||\tilde{b}_i||^2\leq \frac12$. And $\tilde{b}_i$ is the orthogonal component to the rest of $b_1,\cdots,b_{i-1}$, either $|\mu_{1,n+1}|$ is 0 or not zero. 
+        %If it is not zero then $b_{i+1}$ has parts in the span that are not 0.
+        %Now if it is 
+        %Since this step is just outputting the vector, given if we assume $b_1,\cdots,b_n$ is already linearly independent then simply outputting it does not change its linear indepndence. Thus this step keeps the vector 
+        \item Swap: Now since the only vector we are changing is between $b_i$ and $b_{n+1}$ and we start with a set that is linearly independent the rest of the elements will remain linearly independent. Now when we switch elemnts, it implies that $\mu_{i, n+1}\neq 0$ otherwise the algorithm would have terminated. This implies that there is a part of the sized reduced $b_{n+1}$ that is in the part of the vector $b_i$ and not in the rest of the vectors. This implies linear independence for this step.
+        %Now since before the step we assumed that $b_1,\cdots,b_n$ is linearly independent which implies cardinality of the set is equivalent to the rank of the space it spans and question 1.2 directly implies that $\Span(b_1,\cdots,b_i)=\Span(b_1,\cdots,b_{i-1},b_{n+1})$ which implies that the rank of the vector spaces are equivalent and since the cardinality of the sets of vectors is also equivalent.
+          %implies that the new set of vectors returned after this step $b_1,\cdots,b_{i-1},b_{n+1}$ is a set of vectors such that the cardinality of the set is equal to the rank of the space it spans. This implies the returned set is also linearly independent
+        \item Repeat: Since any repetition step consists of the first 3 steps and we showed the first 3 steps keep the set linearly independent any repetition will also keep the set linearly independent
+      \end{enumerate}
+        Thus since we assumed the base case which is that $b_1,\cdots,b_n$ is linearly independent and at every step in the algorithm each step keeps $b_1,\cdots,b_n$ linearly independent implies by induction that at every step of the procedure the vector set remains lienarly independent.\qed
+    \end{subproblem}
+    \begin{subproblem}
+      Now to show this program never terminates since this program only terminates when $b_{n+1}=0$, we must show that $b_{n+1}$ never equals $0$. 
+
+      Now since we assume we start with $\Q$ linear independence implies that we cannot write one vector as the sum of linear $\Q$ coefficents with the rest of the vectors such that no vector can be the zero vector, otherwise we could write it as the sum of vectors with coefficent $0\in\Q$. We also showed that the vectors $b_1,\cdots b_n$ are always $\R$ linearly independent throughout theh algorithm. This inherently implies $\Q$ linear independence.
+      Now since all vectors start not $0$ and process $3$ is simply a swap, the only way they could ever change in value could is in process 1.
+      Now since the size reduction operation consists of adding integer multiples of the basis, this operation does not change the linear independence of $\Q$. Thus the vectors are always $\Q$ independent.
+      Now suppose all vectors are $\Q$ independent in the set $b_1,\cdots,b_i,b_{n+1}$. Then this implies that $b_{n+1}$ can never be 0 since otherwise i could be made out of sum of vectors with coefficent 0. Thus since at every step the whole set is $\Q$ lineraly indepenent even on the size reduction step the values of the vectors will never be $0$ and thus the program will never terminate.
+    \end{subproblem}
+    \begin{subproblem}
+      We define 
+      \[\Phi= \Pi^n_{i=1}\ab||\tilde{b_i}||\]
+      Then before the swap step let the set be $\{b_1,\cdots b_n+1\}$ which implies that the vectors after teh swap step will be written as 
+      $\{b_1,\cdots,b_{i-1}, b_{n+1}, b_{i+1}, \cdots, b_n, b_i\}$. Then let $\Phi'$ be $\Phi$ after the swap step. Then 
+    \[\frac{\Phi'}\Phi= \frac{\Pi^n_{k=1}\ab||\tilde{b_k'}||}{\Pi^n_{k=1}\ab||\tilde{b_k}||} = \frac{\tilde{b_i'}}{\tilde{b_i}}=\frac{\tilde{b_{n+1'}}}{\tilde{b_i}}\]
+    This is true since from problem 1.2 the span of $b_1,\cdots b_{i-1},b_n$ and $b_1, \cdots b_i$ is equivalent so the ghram schmidt process is the same. 
+    %\frac{|\text{det}(b_1,\cdots,b_{i-1},b_{n+1},b_{i+1},\cdots,b_{n})}{|\text{det}(b_1,\cdots,b_n)|}\]
+    Where $\tilde{b_{n+1}}'$ is size reduced such that $\ab|u_{i,n+1}| < \frac12$. Now since 
+    the spans of basis $b_1\cdots b_i$ and $b_1 \cdots b_{i-1}, b_n$ are equivalent implies that the ghram schmidt orthogonalization of both leaves the $i$th basis vector ($b_i$ or $b_{n+1}$) equivalent up to a scaling factor. Thus the size reduction 
+    \[\ab|\mu_{i,n+1}<\frac12| \implies \ab<\tilde b_{n+1}, \tilde b_i> < \frac{\ab<\tilde b_i, \tilde b_i>}2\implies c < \frac{|\tilde{b_i}|}{2|\tilde{b_i}|}\implies c < \frac12\]
+    Where $c$ is the scaling factor between the two vectors since they are equivalent. This directly implies $\frac{\Phi'}{\Phi} < \frac12$
+    \end{subproblem}
+    \begin{subproblem}
+      Minkowski 
+    \end{subproblem}
+    \begin{subproblem}
+      We know from 1.5 that every run of the algorithm decreases $\Phi$ by two. Thus since $\Phi$ is guarenteed not to terminate, we know that we can run this algorithm enough to achieve a set of basis pairs that satisfies this property.
+
+      Now let $i=\log_2(\frac C{(\epsilon/2\sqrt{n})^n})+1$. Then running the algorithm $i$ iterations implies that 
+      \[\Phi <\frac C{2^n} < \frac C{\frac C{(\epsilon/2\sqrt{n})^n}+1} < \frac C{\frac C{(\epsilon/2\sqrt{n})^n}}\]
+      Where $C =\Phi'$, or $\Phi$ of the initial basis set. This implies that $\sqrt{n}\Phi^{1/n} < \epsilon$.
+      And thus from 1.7 there exsits 
+      \[0 < \ab||y|| < \sqrt{n}\Phi^{1/n}\]
+      which implies there exists a vector such taht 
+      \[0<\ab||y||<\epsilon\qed\]
+    \end{subproblem}
+  \end{problem}
+  \begin{problem}
+    \begin{subproblem}
+      Let $y_i$ be the coefficents for the linear combination of $\tilde b_i$ gram schmidt basis vectors such that it is equal to $y$. Then 
+      \[y_i = z_i + \sum_{k=i+1}^n z_k \mu_{k,i}\]
+      This implies that $|y_i|\leq 2^{n/2}$. Thus 
+      \[|z_i| \leq |y_i| + |\sum_{k=i+1}^n z_k \mu_{k,i}| \leq |y_i| + \frac12\sum_{k=i+1}^n|z_k|\]
+      Directy implies $(\lambda_1(\lat))^2 = \sum_{i=1}^n y_i^2 ||\tilde b_i ||^2$. This imples our base case. 
+
+      Now let $|z_{n-k}|\leq |y_{n-k}| + \frac12 \sum_{j=1}^k |z_{n-j}| \leq 2^{n/2} + \frac12\sum_{j=1}^k 2^{n/2}(3/2)^j \leq 2^{n/2}(3/2)^k$
+
+      Now since our base case satisfies and we showed the recurring step implies that by induction this holds. \qed
+    \end{subproblem}  
+    \begin{subproblem}
+      Create an algoritm defined by iterating in order by $i$ through all vectors such that $|z_{n-i}|\leq 2^{n/2+i}, z\neq0$. Then if $||B\hat z||<$current shortest vector then set it as the shortest vector. Then output at the end.
+
+      Now since we enumerate over $|z_{n-i}|\leq 2^{n/2+i}, z\neq0$, our number of steps is 
+      \[\Pi_{i=1}^n  2^{n/2+n-1}= 2^{n^2}\]
+      which implies a total complexity of $2^{\bigO(n^2)}$
+
+      Now since there exists some vector $v$ in the set described such that $Bv = y\in \lat$ with $||y||=\lambda_1(\lat)$ and we are finding it by looping over the set such that we find the smallest one we will find the shortest nonzero vector. Note that it is nonzero since the matrix $B$ spans the space.
+    \end{subproblem}
+    \begin{subproblem}
+      
+subproblem    \textbf{Part C:}\\
+      Proof derived from \href{https://pubsonline.informs.org/doi/10.1287/moor.12.3.415}{https://pubsonline.informs.org/doi/10.1287/moor.12.3.415}, section 4. 
+
+    \begin{claim}
+      There exists an algorithm for exact CVP that runs in $2^{\mathcal{O}(n^2)}$.
+    \end{claim}
+    Recall 
+    \begin{definition}[CVP]
+      Given a vector $t\in\R^n$ and lattice $\lat\subset \R^n$ 
+      \[CVP(\lat, t) = \coloneq \min_{y\in\lat}\ab||y-t||\]
+
+    \end{definition}
+    \begin{proposition}
+      Suppose that $\lat(b_1,\cdots,b_n)$ is a lattice in $R^{k}$, $k\geq n$ with all $b_i$ independent and $b_0\in \R^k$. Let $b_0'$ be the projection of $b_0$ onto the span of $b_1,\cdots,b_n$. Then there exists a point $b\in\lat$ such that
+      \[\ab|b-b_0'| \leq \frac12 \ab(\sum_{j=1}^n (b_j(j))^2)^\frac12\]
+    \end{proposition}
+    \begin{proof}
+      Since $b(1,1), b(n,n)$ forms an orthogonal basis for their vector spcae with $b_0'$ in that vector space, this implies we can successively choose integers with ordering $\alpha_n, \alpha_{n-1},\cdots,\alpha_1$ such that 
+      \[\ab|((\sum_{i=j}^n\alpha_ib_i-b_0'), b(j,j))|\leq (b_j(j))^2/2\forall j\]
+      is true given arbitary choice of $\alpha_j$. This implies the proposition. 
+    \end{proof}
+
+    \begin{proposition}
+      There exists a easily determined set $T\subset \lat^{n-i+1}$ with $|T|\leq (n+\sqrt n)^{n-i+1}$ such that if $\sum_{j=1}^n \lambda_jb_j$ is closest in the lattice to $b_0$ then $(\lambda_i,\cdots,\lambda_n)$ belongs to $T$. 
+    \end{proposition}
+    \begin{proof}
+      Now since 
+      \[\sum_{j=1}^n\lambda_jb_j=v\]
+      is one of the cloest (nonunique) points in $\lat$ to $b_0$ implies $v$ is the closest point to $b_0'$ in $\lat$. Now proposition 0.3 implies that $|v-b_0'| \leq (\sqrt{n}/2)b_i(i)$ Yet $|v-b_0'| \geq |((v-b_0'),b(n,n))|/b_n(n)=|\lambda_nb_n(n)-(b_0',b(n,n))/b_n(n)|=|\lambda_n-t|b_n(n)$ for some $t\in\R$. This implies at most $1+\sqrt{n}b_i(i)/b_n(n)$ candidates for $\lambda_n$. This implies we can show a similar bound for $\lambda_1,\cdots,\lambda_n$ using (TODO). Now suppose $\lambda_{j+1},\cdots,\lambda_n$ are fixed integers, $j\geq i+1$. Then this implies by (TODO) that there are at most $1+\sqrt n b_i(i)/b_j(j) \leq (1+\sqrt n)b_i(i)/b_j(j)$ possible values of $\lambda_j\st$ the length of $v-b_0'$ in direction of $b_j(j)$ is boudned by $\frac{\sqrt n}2 b_i(i)$. This since $b_i(i)\geq b_j(j)$ that given a set $T$ candidate $\lambda_1,\cdots,\lambda_n$ we get 
+      \[|T|\leq \Pi_{j=1}^n (1+\sqrt n)b_i(i)/b_j(j)\]
+    So this implies that $b_i(i)$ is the length of the shortest vector in $\lat$ \qed
+    \end{proof}
+
+    \begin{theorem}
+      CVP solves for the closest vector in $\bigO(n^ns)$ arithmetic operations where $s$ is the length of the inupt
+    \end{theorem}
+    \begin{proof}
+      Now let $T(n)$ bet he number of arithmetic operations performed by $CVP$. Then 
+      \[T(n)\leq (n+\sqrt n)^{n-1+1}T(i-1)+q(n),\]
+      $q(n)$ is a polynomial with no $s$ dependence. This implies that betwee $1\leq i\leq n$, 
+      \[\max(((i-1)/(n+\sqrt n))^{i-1})\]
+      occurs at $i=n$ and 
+      \[\lim ((n-1)/n)^{n-1}=\frac1e.\]
+      This implies that $T(n)$ is $\bigO(n^n)$ by inducting over $n$. This implies that 
+      $T(n) = \algo_0(n)+\algo_1(n)$ where $\algo_0(n), \algo_1(n)$ represent the number of oeprations required for $\algo_0,\algo_1$. Thus since max time complexity between the two algorithms is $\algo_0(n)=\bigO(n^n)$ implies that this is the time complexity of the algorithm. \qed.
+    \end{proof}
+      \begin{lstlisting}[language=Python]
+        A0(n, L):# aka shortest 
+          if n=1 
+            return [L[1]]
+          L = LLL(L) #LLL reduce the basis
+          def: LProjGoto
+          LProject
+          for i in range(i):
+            LProject[i] = Project(B[i], L-{L[i]})
+          LNew = A0(n-1, LProject)
+          for i in range(2,n)
+            Lift(Lnew[i], L[i])
+          if Norm(L[2]) < sqrt(3)*Norm(L[2])/2: 
+            Swap(L[1],L[2])
+            Goto LProjGoto 
+          for i in range j
+            if Norm(L[j] >= L[1]):
+              j0 = min j such that its true 
+            else: 
+              j0 = n+1 
+          for i in range(1, j0-1):
+          LBasis.append(Lnew[i])
+          Enumerate(Basis)# enumerates the basis 
+
+          return: a basis L containing v_1 
+      \end{lstlisting}
+      \begin{lstlisting}
+        A1() 
+      \end{lstlisting}
+      \begin{lstlisting}
+        CVP(n L):
+          NewBasis = A0(L)
+          Candidates = null
+          forall lambda i: 
+            if i = 1 
+              a1 = 
+
+      \end{lstlisting}
+    \end{subproblem}
+  \end{problem} 
+
+  \begin{problem}
+    \begin{subproblem}
+      %Suppose this is false. Then there must be some $r'$ such that $r'\neq \min\{r|\lat+B^n(r)=\R^n\}$. Thus either $r'<r$ or $r<r'$.
+%Now suppose $r<r'$. Now we know if $\hat p\in \lat + B^n(r)$ then $\text{dist}(\hat p,\lat) \leq B^n(r)$.
+%  Now suppose $r'<r$. Since $r$ is defined as the mininum vector such that $\lat+B^n(r)=\R^n$ then $r$ is a vector such that $B^n(r)\neq\R^n$. Now since we are working in $\R^n$, if $\lat+B^n(r)$ is not equal to $\R^n$, then there exists elements in $\R^n$ such that that they are not inside of $\lat+B^n(r)$. This implies that they are more than a distance $r'$ further than any point in this lattice, however since $\mu(\lat)\coloneq \max_{t\in\R^n}\text{dist}(\hat t, \lat)$ and we know there exists a point in $\R^n$ such that it is further than $r'$, we know that $r' < \max_{t\in\R^n}\text{dist}(\hat t, \lat)=\mu(\lat)$ which implies that $r'\neq \mu(\lat)=\max_{t\in\R^n}\text{dist}(\hat t, \lat)$. 
+
+  Now suppose that $r= \max_{t\in\R^n}(t,\lat)$. Then for any point $t\in\R^n$, it is always at most $r$ away from any point in the lattice. Now since any volume ball of radius $r$ will contain all the points at most $r$ distance away from it implies that any volume balls around every set of lattice points will contain all points in $\R^n$. Thus $\max_{t\in\R^n}\text{dist}(t,\lat)\in \{r|\lat+B^n(r)=\R^n\}$ 
+
+  Now suppose $r'<\max_{t\in\R^n}(t,\lat)$. Then since $r'$ is less than the maximum distance from the lattice to any point, there exists a point $p\in\R^n$ such that the distance from $p$ to any point in the lattice is greater than $r'$. This then directly implies that there exists a point not in $\lat+B^n(r)$ which implies that $\lat+B^n(r)\neq\R^n$. Thus $r'$ is not in the set $\{r|\lat+B^n(r)\}=\R^n$.
+
+  Thus we have showed that $\max_{t\in\R^n}\text{dist}(t,\lat)\in \{r|\lat+B^(n)=\R^n\}$ and that given $r'<\max_{t\in\R^n}\text{dist}(\hat t, \lat)$ then $r'\notin \{r|\lat+B^n(r)=\R^n\}$. Thus 
+  \[\max_{t\in\R^n}\text{dist}(t,\lat)= \min\{r|\lat+B^n(r)=\R^n\}\qed\]
+    \end{subproblem}
+    \begin{subproblem}
+      Let 
+      \[S_r \coloneq \cup_{y\in \lat \cap B^n(r)}(B^n(\mu(\lat))+1), r \geq \mu(\lat)\]
+      Then sicne they are disjoint implies that 
+      \[\text{vol}(B^n(\mu(\lat)))(\lat \cap B^n(r))\geq \text{vol}(S_r)\]
+      
+      But since any distance in the lattice is bounded by $\mu(\lat)$ implies that 
+      \[\forall v\in B^n(r-\mu(\lat))\]
+      there exists a point such that $v=x+y$ where $x\in \lat$ $y\in B^n(\mu(\lat))$. Thus since $||v|| +||x|| <r$ implies by triangle inequality that $||v|| < r$.
+
+      This implies that all $\forall v\in B^n(r-\mu(\lat)), v\in S_r$. Thus since 
+      \[B^n(r-\mu(\lat)) \leq \text{vol}(B^n(\mu(\lat))) (\lat\cap B^n(r))\]
+      implies that 
+      \[\frac{B^n(r-\mu(
+\lat
+))}{\lat \cap B^n(r)}\leq \text{vol}(B^n(\mu(\lat)\forall r\]
+      Thus 
+      \[\lim_{r\to\infty}\frac{B^n(r-\mu(\lat))}{\lat\cap B^n(r)} = \frac{B^n(r)}{\lat \cap B^n(r)} = \text{det}(\lat)\]
+      Which we just showed is less than $\vol (B^n(\mu(\lat)))$. Thus 
+      \[\text{det}(\lat) \leq \vol (B^n(\mu(\lat)))\]
+      
+    \end{subproblem}
+
+
+    \begin{subproblem}
+      Suppose this is false. Then there must exist some coefficent less than $\frac{\lambda_n(\lat)}2$ such that it is equal to $\mu(\lat)$. 
+\\\\
+      Now for a given set of $\lambda_1(\lat)\cdots \lambda_n(\lat)$ find a working configuration of associated vectors for this set of lattices. This is guarenteed to exist since if you sort the vectors $\mathbf{y}_1,\cdots,\mathbf{y}_n$ by norm and sort in arbitrary order for vectors of equivalent norm, then for each $1\leq i\leq n$ the definiition satisifies and you have an associated $\mathbf{y}_i$ for every $\lambda_i(\lat)$. Associate each basis vector associated with $\lambda_i(\lat)$ as $\mathbf{y}_i$
+\\\\
+Now define a new lattice $\lat'$ as the set of basis vectors $\{\mathbf{y}_1,\cdots,\mathbf{y}_{n-1}, \frac12\cdot\mathbf{y}_n\}$. Now since $\mathbf{y}_1,\cdots,\mathbf{y}_n$ are linearly independent imply $\mathbf{y}_1,\cdots,\mathbf{y}_{n-1}$ is also linearly independent. Recall from the definition of linear indepndence on the reals that no set of coefficents $\hat c\in\R^n$ where $\sum^{n-1}_{i=1} c_i \hat v_i = c_n v_n$. This directly implies that no set of sum of linear real coefficents of $\mathbf{y}_1,\cdots,\mathbf{y}_{n-1}$ can be equal to any vector in the linear span of $\frac12\cdot \mathbf{y}_n$. This directly implies since the integers are a subset of the reals that no sum of integer coefficents for $\mathbf{y}_1,\cdots,\mathbf{y}_{n-1}$ can reach point $\frac12\cdot\mathbf{y}_n$ without using vector $\frac12\cdot\mathbf{y}_n$ in its sum. Now since $\lat'$ is a lattice, the all its coefficents must be integers which implies that since we need to use at least $\pm 1 \cdot \frac12\cdot\mathbf{y}_y$ to reach $\frac12\cdot\mathbf{y}_n$ from any point in the linear span of $\mathbf{y}_n-\{\vec0\}$, using the triangle inequality we get a bound on the norm of the vector to reach any lattice point in the span of $\frac12\cdot\mathbf{y}_n$ point of $\frac12\lambda_n(\lat)$. 
+\\\\
+Now going back to $\lat$, since they differ by a scaling factor on a single vector, we know that the only difference between the set of lattice vectors is that $(n+\frac12)\mathbf{y}_n$ is in $\lat'$ but not in $\lat$. Since we know a bound on the distance to $\frac12\mathbf{y}_n$, $\lat'$ implies that we know there is a point at least $\frac12\lambda_n(\lat)$ away from any point on the lattice, for there to be a $r|\lat+B^n(r)=\R^n$, $r$ must be at least $\frac12\lambda_n(\lat)$. This implies a bound on the $\frac12\lambda_n(\lat)\leq\min\{r|\lat+B^n(r)=\R^n\} = \mu(\lat)$ which implies the bound. \qed
+    \end{subproblem}
+  \end{problem}
+
+  \begin{problem}
+    \begin{subproblem}
+    \begin{definition}[Poisson summation forumula]
+      Defined in (5.3) 
+      \[\sum_{y\in\lat}f(\mathbf{y}-\mathbf{t}) = \frac1{\det\lat}\sum_{w\in\lat^*}\cos(2\pi\ab<\mathbf{w},\mathbf{t}>\hat f(\mathbf{w}))\]
+    \end{definition}
+    Now given 
+      \[\rho_s(\lat)\coloneq \sum_{\mathbf{y}\in\lat}\rho_s(\mathbf{y}) = \sum_{\mathbf{y}\in \lat} e^{-\pi \ab||\mathbf{y}||^2/s^2}\]
+    Setting $\mathbf{t}=0$ implies that 
+    \[\sum_{y\in\lat}f(\mathbf{y}) = \frac1{\det\lat}\sum_{w\in\lat^*}\cos(2\pi\ab<\mathbf{w},\mathbf{0}>\hat f(\mathbf{w}))= \frac1{\det\lat}\sum_{w\in\lat^*}\hat f(w)\]
+    and since the determinant of the lattice is defined as 1, $\frac1{\det{\lat}}=1$. Thus 
+    \[\sum_{y\in\lat}f(\mathbf{y}) = \frac1{\det\lat}\sum_{w\in\lat^*}\cos(2\pi\ab<\mathbf{w},\mathbf{0}>\hat f(\mathbf{w}))= \frac1{\det\lat}\sum_{w\in\lat^*}\hat f(w)\]
+    We also know that the gaussian function is equivalent up to a scaling factor, i.e. $\hat \rho_s(\mathbf{w})=s^n\rho{\frac1s}(\mathbf{w})$
+
+  So applying the posson summation formula to the guassian function and using its scaling property implies that 
+  %\[\sum_{y\in\lat}e^{-\pi\ab||\mathbf{y}||^2/s^2}=\sum_{w\in\lat^*}s^ne^{-\pi\ab||\mathbf{y}||^2 s^2} = \]
+  %\[s^n e^{-\pi\ab||\vec0||^2} + \sum_{w\in\lat^*-\{0\}}e^{-\pi}\]
+  \[\rho_s(\lat)=\sum_{y\in\lat}\rho_s(y) = \frac1{\det{\lat}}\sum_{w\in\lat^*} \hat \rho(w) = \sum_{w\in\lat^*}s^n \rho_{1/s}(w)\]
+  \[=s^n\rho_{1/s}(0)+\sum_{w\in\lat-\{0\}}\rho_{1/s}(w) \geq s^n\]
+  since $\rho_{1/s}$ and $s$ are positive values.\qed
+  \end{subproblem}
+  \begin{subproblem}
+    Recall that 
+    \[\rho_{s,r}(\lat)\leq e^{-\pi x^2}\rho_s(\lat)\]
+    where $r=\sqrt{\frac n{(2\pi)}}s+xs$ and $x\geq 0$.
+    Thus since $x=10\geq0$ implies that we know 
+    \[\rho_{s,r}(\lat)\leq e^{-\pi 100}\rho_s(\lat)\]
+    %And given that $s^n\leq \rho_s(\lat)$ implies that 
+    %\[\rho_{s,r}(\lat)\leq e^{-\pi 100}\rho_s(\lat)\leq e^{-\pi 100}s^n\]
+    Now since we know that $\rho_s(\lat)\geq 2$ implies that given 
+    \[e^{-\pi100}\rho_{s,r}(\lat)<\rho_s(\lat)-1\]
+    thus
+    \[\rho_{s,r}(\lat)< e^{100\pi}(\rho_s(\lat)-1)\]
+
+
+
+    Directly implies that 
+    \[\rho_{s,r}(\lat)\leq e^{-\pi100}\rho_s(\lat)< \rho_s(\lat)-1\] 
+    that $\rho_{s,r}(\lat) < \rho_s(\lat)-1$. \qed
+  \end{subproblem}
+  \begin{subproblem}
+    Now let 
+    \[s(n) \coloneq 1+\frac {2n}{\sqrt{n/(2\pi)}}\]
+    Then since 4.1 shows 
+    \[\rho_s(\lat) \geq s^n \forall s>0\]
+    Then it will hold that 
+    \[s(n)^n \geq 1+\frac 2{\sqrt{n/(2\pi)}}\]
+    regardless of the $n$ dependence on $s$.
+
+    Now since 
+    \[1+\frac {2n}{\sqrt{n/(2\pi)}} \geq 1+\frac {2(n-1)}{\sqrt{(n-1)/(2\pi)}}\]
+    is equivalent to $\sqrt n \geq \sqrt{(n-1)}$ which is trivially true given $n>1$ then $s(n) \leq s(n-1)$ for $n>1$.
+
+    And since $s(1)=2$ implies $s(n)\geq 2\forall n$.
+
+
+    Thus since 
+    \[\rho_{s,r}(\lat) < \rho_s(\lat)-1\]
+    implies that 
+
+    And since $\lambda_1(\lat)\leq r$ implies that since we know 
+    $\rho_{s,r}(\lat) < \rho_s(\lat)-1$ and 
+    \[\rho_s(\lat) = \rho_{s,r}(\lat) + \sum_{y\in \lat \cap B^n(r)}\rho_s(y)\]
+    That $\sum_{y\in \lat \cap b^n(r)}\rho_s(y) > 1$ which implies that $\sum_{y\in \lat \cap b^n(r)-\{0\}}\rho_s(y) > 0$
+    Which means that since the sum of the fourier components is geq 0 then there must exist a vector in the lattice such taht $||y||<r$.
+
+    \[\lambda_1(\lat) \leq r = (1+\frac2{\sqrt{n/(2\pi)}})(\sqrt{\frac{n}{2\pi}}+10) < \sqrt{\frac{n}{2\pi}}+100\]
+
+    Shows that $\lambda_1(\lat)\leq \frac n {2\pi}+100$
+  \end{subproblem}
+  \end{problem}
+  \begin{problem}
+    A bit 
+  \end{problem}
+\end{document}
+

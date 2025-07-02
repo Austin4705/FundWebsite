@@ -1,0 +1,4 @@
+[submodule "Templates"]
+	path = Templates
+	url = https://github.com/Austin4705/Templates.git
+	branch = website-prod

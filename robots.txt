@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /files/private/
+
+# Allow Google Image crawler to access images
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# Allow Adsense bot
+User-agent: Mediapartners-Google
+Allow: /
+
+# Block specific crawlers from unnecessarily indexing certain paths
+User-agent: Twitterbot
+Disallow: /assets/
+Disallow: /files/
+
+Sitemap: https://austin-wu.com/sitemap.xml 

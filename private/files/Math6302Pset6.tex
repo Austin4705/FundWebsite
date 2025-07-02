@@ -1,0 +1,154 @@
+\documentclass[12pt]{amsart}
+\usepackage{austin}
+
+\title{Math6302}
+
+\begin{document}
+  \maketitle
+  \begin{problem}
+    \begin{subproblem}
+      Given a $\lat$, run the $\gamma-$svp on it. Thus we have obtained a non-zero vector $v$ such that 
+      \[||v|| \leq \gamma \lambda_1(\lat)\]
+      And since we know from minkowskis theorem that 
+      \[\lambda_1(\lat) \leq \sqrt{n}\det(\lat)^{\frac1n}\]
+      Implies that
+      \[||v|| \leq \gamma\sqrt{n}\det(\lat)^{\frac1n}\]
+      Which implies that running $\gamma$-SVP returns a non-zero vector that satisfies $\gamma\sqrt{n}$-MSVP. Thus since $\gamma$-SVP runs in polynomial time there is trivially a reduction to polynomial time. \qed
+    \end{subproblem}
+    \begin{subproblem}
+      Recall from cauchy schwartz that given 
+      \[||v||<\frac1{\delta}\det(\lat)^\frac1n\]
+      and 
+      \[||w||<\delta\det(\lat^*)^\frac1n\]
+      That by cauchy schwartz, since 
+    \[|\ab<w,v>|\leq ||w||||v||\]
+      Implies that 
+      \begin{align}
+        |\ab<w,v>|\leq ||v||\ab||w||<& \frac1{\delta}\det(\lat)^\frac1n\delta\det(\lat^*)^\frac1n=(\det(\lat)\det(\lat^*))^{\frac1n}\\
+      \intertext{Thus since $\det(\lat)\det(\lat^*)=1$ even for non full rank lattices, we know that}
+                                   &= 1^\frac1n \\
+                                   &= 1
+      \end{align}
+      But since by definition of a dual lattice we know that $\ab<w,v>\in \Z$ and $|\ab<w,v>|<1$ there is only one possible solution which is tha t $|\ab<w,v>|=0$\qed
+    \end{subproblem}
+    \begin{subproblem}
+      Let $\det(\lat_i)$ be the determinat of the $i$-th lattice. Let $r_i$ be the rank of the $i$-th lattice. Since we start with a lattice at rank $n$ this implies that $r_i=n-i+1$. Thus since $\algo$ solves $\gamma$-MSVP we know by theorem 1.1 that 
+      \[||y_i||\leq \delta\det(\lat_i)^\frac1{r_i}\]
+      \[||w_i||\leq \delta\det(\lat^*_i)^\frac1{r_i}\]
+      We also know for any given lattice intersecting with $w^\perp_i$ reduces the determinant $\det(\lat_{i+1})=\frac{\det(\lat_i)}{||w_i||}$. Now let $v=\lambda_1(\lat)\in \lat$. 
+      Recall also that $\det(\lat_i)\,\det(\lat_i^{*}) = 1$ for every $i$ 
+
+      Let \(v\in\lat\) be a non‑zero vector with \(\lVert v\rVert=\lambda_1(\lat)\).
+      Now let $t$ be the smallest index such that
+      \[t := \min\Bigl\{\,i:\ab||v||\,\le\, \tfrac{1}{\delta}\,\det(\lat_i)^{1/r_i} \Bigr\}.\] 
+      Because \(\delta\ge\sqrt{n}\), by Minkowski such an index exists.
+      Thus for all \(j<t\) we have
+      \(\lVert v\rVert > \det(\lat_j)^{1/r_j}/\delta\).
+      Combining this with the bound on \(\lVert w_j\rVert\) and
+      Problem 1.2 gives
+      \(\langle w_j , v\rangle \neq 0\) so \(v\notin\lat_{j+1}\).
+      But since by construction \(v\in\lat_t\), and at \(i=t\) the problem does apply, so since $\alpha$ guarentees a solution to $\delta$-MSVP,
+      \[ \langle w_t , v\rangle = 0, \qquad\text{ i.e.\ } v\in\lat_{t+1}. \]
+      \[ \lVert y_{t+1}\rVert \;\le\; \delta\,\det(\lat_{t+1})^{1/r_{t+1}} \;=\;  \delta\,\bigl(\det(\lat_t)/\lVert w_t\rVert\bigr)^{1/(r_t-1)} . \]
+      Now since \(\lVert w_t\rVert\le\delta\,\det(\lat_t^{*})^{1/r_t}\)
+      and \(\det(\lat_t)\det(\lat_t^{*})=1\),
+      \[ \det(\lat_{t+1})^{1/r_{t+1}} \;\le\; \bigl(\det(\lat_t)\bigr)^{1/(r_t-1)} =\Bigl(\delta\,\lVert v\rVert\Bigr)^{\frac{r_t}{r_t-1}}\!, \]
+      where the equality uses the definition of \(t\).
+      Thus,
+      \[ \lVert y_{t+1}\rVert \;\le\; \delta\,\Bigl(\delta\,\lVert v\rVert\Bigr) \;=\; \delta^{2}\,\lambda_1(\lat). \]
+      Thus the algorithm outputs the shortest vector among
+      \(y_1,\dots,y_n\),
+      so the final answer \(y\) satisfies
+      \[ \lVert y\rVert\le\lVert y_{t+1}\rVert\le\delta^{2}\,\lambda_1(\lat), \]
+      i.e.\ it is a valid solution to \(\delta^{2}\)-SVP.
+    \end{subproblem}
+  \end{problem}
+  \begin{problem}
+   %  \begin{subproblem}
+   %    Let $y_1,\dots,y_n$ be a set of linear independent vectors that span $\R^n$ such that $y_1,\dots y_l$ forms a basis for $\lat'$ and $y_{l+1},\dots,y_n$ is orthogonal with eachother. This is guarenteed to exist since there exist $y_1,\dots y_l$ vectors that form a basis for $\lat'$, implying they span $\R^n$, and given those $l$ vectors are linearly independent there must exist $n-l$ linearly independent vectors that form the nullspace. Running ghram schmit on these $n-l$ vectors implies there must exist an orthogonal set. Since these vectors span $\R^n$, this implies that for all vectors $w\in \R^n$, there exists a uniuqe set of coefficents in $\R$ such that $w=\sum_{i=1}^nc_iy_i$. 
+   %    \begin{align*}
+   %      (\lat')^\perp &\coloneq \{w\in \R^n: \forall x\in (\lat'), \ab<w,x>=0\} \\ 
+   %        &= \{\sum_{i=1}^nc_iy_i : c\in \R^n: \forall v\in \R^l, \ab<\sum_{i=1}^nc_iy_i,\sum_{i=1}^l v_iy_i>=0\} \\
+   %                 \intertext{And by linearity we know that}
+   %                 &= \{\sum_{i=1}^nc_iy_i: c\in \R^n: \forall v\in \R^l, \sum_{i=1}^n\sum_{j={l+1}}^nc_iv_j \ab<y_i,y_j>=0\} \\
+   %                 \intertext{Thus since for $j>l$, we know that $\ab<y_i,y_j>=\delta_{ij}$ we know that}
+   %                 &= \{\forall w\in \R^n: \exists c\in \R^{(n-l)}: w=\sum_{i=l+1}^nc_iy_i\} \\
+   % \end{align*}
+   % so we get that $(\lat')^\perp$ is directly equal to the linear space spanned by $y_{l+1},\dots,y_n$.
+   %
+   % Similarly recall from HW0 that $\Pi$ is linear. Let $z_1,\dots,z_n$ be a set of basis vectors such that $z_i$ is linearly dependent to $y_i$ for $i\in\{1,\dots,l\}$. This is guarenteed to exist since $\lat'$ is a sublattice. Thus 
+   % \[\Pi_{(\lat')^\perp}(w) = \sum_{i=1}^n c_i \Pi_{(\lat')^\perp}(z_i)\]
+   % And since we know that $(\lat')^\perp$ is defined by the set of $y_{l+1},\dots,y_n$ vectors and $y_1,\dots y_l$ defines $\lat'$ we know that $\Pi_{(\lat')^\perp}(z_i)=0$ for any $i\in\{1,\dots,l\}$. We also know that since $y_1,\dots,y_l$ spans $\R^l$ then $z_1,\dots,z_l$ also spans $\R^l$ which implies that $z_{l+1},\dots,z_n$ must span the nullspace of $z_1,\dots,z_l$ since $z_1,\dots,z_n$ spans $\R^n$. Thus since $y_{l+1},\dots,y_n$ spans the nullspace we well $\Pi_{(\lat')^\perp}(z_i)=1$ for any $i\in\{l+1,\dots,n\}$. Thus there must exist some equivlaent construction
+   % \[= \sum_{i={l+1}}^nc_i y_i\]
+   % and we get that the span of $S$ is equal to the linear span of $y_{l+1},\dots,y_n$ and since both spaces are equivlaent to the linear space spanend by $y_{l+1},\dots,y_n$ we know they are equal.\qed
+   %  \end{subproblem}
+   %  \begin{subproblem}
+   %    Let $y_1,\dots,y_n$ be a set of vectors that span $\R^n$ such that $y_1,\dots y_l$ forms a basis for $\lat'$. This is guarenteed to exist since there exist $y_1,\dots y_l$ vectors that form a basis for $\lat'$, implying they span $\R^n$, and given those $l$ vectors todo
+   %
+   %    Since these vectors span $\R^n$, this implies that for all vectors $w\in \R^n$, there exists a uniuqe set of coefficents in $\R$ such that $w=\sum_{i=1}^nc_iy_i$. 
+   %
+   %    Similarly, since $\lat'$ spans $\R^n$ and $y_1,\dots,y_l \in \lat'$ are linearly independent, we know that $y_1,\dots,y_l$ span $\lat'$. Thus since $y_1,\dots,y_n$ spans $\R^n$ we know that $y_{l+1},\dots,y_n$ must form a basis for the nullspace of $\lat'$. Thus since
+   %
+   %    Similarly recall from HW0 that $\Pi$ is linear. Thus 
+   %    \[\Pi_{(\lat')^\perp}(w) = \sum_{i=1}^n c_i \Pi_{(\lat')^\perp}(y_i)\]
+   %    And since we know that $(\lat')^\perp$ is defined by the set of $y_{l+1},\dots,y_n$ vectors and $y_1,\dots y_n$ is linearly independent with each other meaning $\Pi_{(\lat')^\perp}(y_i)=0$ for any $i=\{1,\dots,l\}$, we know that
+   %    \[= \sum_{i={l+1}}^nc_i y_i\]
+   %    Thus we get that the span of $S$ is equal to the linear span of $y_{l+1},\dots,y_n$ and since both spaces are equivlaent to the linear space spanend by $y_{l+1},\dots,y_n$ we know they are equal.\qed
+   %  \end{subproblem}
+
+    % \begin{subproblem}
+    %   Now recall from the previous provlem that $(\lat')^\perp$ is equal to a span of linearly independent set of vectors $z_{l+1},\dots,z_n$. Where $y_1,\dots,y_n$ is a set of vectors that span $\R^n$ and $y_1,\dots,y_l$ is a basis for $\lat'$.
+    %
+    %   Now given that $T\coloneq \lat^*\cap (\lat')^\perp$ with $S^*\coloneq \{w\in \mathrm{span}(S):\forall y\in S,\ab<y,w>\in \Z\}$, we know that $(\lat')^\perp$ is constructed by the set of $z_{l+1},\dots,z_n$. Thus since for any $y_1,\dots,y_l\in \lat'$, $\ab<z_i,y_j>=0\in \Z$. Now for any $y_{l+1},\dots,y_n$, we know that
+    %
+    %   Thus implies that any $z_i$ is in $\lat^*$ which implies that $T=(\lat')^\perp$ and thus trivially implies that $\mathrm{span}(T)=(\lat')^\perp$.
+    % \end{subproblem}
+    \begin{subproblem}
+      Let $y_1,\dots ,y_l\in \lat'$ be a basis of $\lat'$ and extend it to
+      $y_{l+1},\dots ,y_n\in \lat$ so that $y_1,\dots ,y_n$ is a basis of $\R^n$.
+      Set $U:=\mathrm{span}(\lat')$ and $V:=\mathrm{span}(y_{l+1},\dots ,y_n)$.
+      Because $U\oplus V=\R^n$, we have $(\lat')^\perp=V^\perp$ and
+      $\dim V^\perp=n-l$. Note that $V\cap U=\{0\}$.
+      
+      For $i>l$ put $z_i:=\Pi_{(\lat')^\perp}(y_i)$. Since the vectors $z_{l+1},\dots ,z_n$ are linearly independent (projection is injective on V since $\cap U=\{0\}$) and lie in $(\lat')^\perp$, so they form a basis of $(\lat')^\perp$.
+
+      Now for each $z_i$ since we know it belongs to $S=\Pi_{(\lat')^\perp}(\lat)$ we know that $(\lat')^\perp\subseteq\mathrm{span}(S)$.
+      The opposite inclusion is also obvious, which implies equality.
+    \end{subproblem}
+
+
+    \begin{subproblem}
+    Let $y_{1},\dots ,y_{l}\in \lat'$ be a basis of $\lat'$ and extend it to linearly independent $y_{l+1},\dots ,y_{n}\in \lat$. This is guarenteed to exist since $\lat'$ is a sublattice. Now write $B:=\{y_{1}\;\dots\;y_{n}\}$, so $L=B\Z^{n}$ and its dual lattice has basis $B^{-*}:=B^{-T}$. Denote the dual basis vectors by $y_{1}^{*},\dots ,y_{n}^{*}$, so $B^{-*}\coloneq\{y_{1}^{*}\;\dots\;y_{n}^{*}\}$.
+    
+    Now since by construction $y_{j}^{*}\in \lat^{*}$. This implies that for $1\le i\le l<j\le n$ we have $\ab<y_{i},y_{j}^{*}>=\delta_{ij}=0$, hence $y_{j}^{*}\perp \lat'$, so $y_{j}^{*}\in(\lat')^{\perp}$. Not since independence is inherited from the dual basis. Thus $y_{l+1}^{*},\dots ,y_{n}^{*}\in \lat^{*}\cap(L')^{\perp}=T$ and the vectors are linearly independent.
+    
+    There are $n-l$ such vectors, matching
+    $\dim(\lat')^{\perp}$, so this implies that $\operatorname{span}(T)\supseteq\operatorname{span}\{y_{l+1}^{*},\dots ,y_{n}^{*}\}=(\lat')^{\perp}$.
+    
+    Thus since we also know that by definition $T\subseteq(\lat')^{\perp}$, hence
+    \[ \mathrm{span}(T)=(\lat')^{\perp}. \]
+    \end{subproblem}
+    
+
+    \begin{subproblem}
+      Let $w\in\lat^*\cap (\lat')^\perp$. For any $y\in \lat$ let $s\coloneq\Pi_{(\lat')^\perp}(y)\in S$. Thus since $w$ is in $(\lat')^\perp$ and $s(y)$ is in the proejction space which is self adjoint implies that for any $y\in\lat$, 
+      \[\ab<s(y),w>=\ab<\Pi_{(\lat')^\perp}(y),w> = \ab<y, \Pi_{(\lat')^\perp}(w)>=\ab<y,w>\in \Z\]
+      Since $w\in \lat^*$. Thus since $w$ $\mathrm{span}(S)=(\lat')^\perp$ implies that $w\in S^*$.
+
+      Now let \(w\in S^{*}\). By definition of \(S^{*}\) we already have \(w\in\mathrm{span}(S)=(\lat')^\perp\).
+      To prove \(w\in \lat^{*}\), pick an arbitrary \(y\in \lat\) and set 
+      \(y = y_{\parallel}+y_{\perp}\) with \(y_{\parallel}\in\operatorname{span}(\lat')\) and 
+      \(y_{\perp}:=\Pi_{(\lat')^\perp}(y)\in S\).  Then
+      \[ \langle y,w\rangle = \langle y_{\parallel},w\rangle + \langle y_{\perp},w\rangle. \]
+      Because \(w\in (\lat')^\perp\), the first term vanishes (\(w\perp \lat'\)) and the second term is an integer since
+      \(y_{\perp}\in S\) and \(w\in S^{*}\).  Hence \(\langle y,w\rangle\in\mathbb Z\) for all \(y\in \lat\), which implies that\ \(w\in \lat^{*}\).
+      Thus the two inclusions give \(S^{*}=lat^{*}\cap (\lat')^\perp\), establishing that
+      \[ \bigl(\Pi_{(\lat')^{\perp}}\!(\lat)\bigr)^{*} \;=\; \lat^{*}\cap (\lat')^{\perp}. \]
+    \end{subproblem}
+  \end{problem}
+  \begin{problem}
+    Not as much as others
+  \end{problem}
+
+
+\end{document}

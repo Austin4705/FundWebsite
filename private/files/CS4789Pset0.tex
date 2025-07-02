@@ -1,0 +1,124 @@
+\documentclass[12pt]{amsart}
+\usepackage{austin}
+
+\title{Pset 0}
+\font\nullfont=cmr10
+
+\begin{document}
+  \maketitle
+  \section{Q1}
+  \begin{problem}
+    I understand I read the course website. 
+  \end{problem}
+  
+  \section{Q2}
+  \begin{problem}
+   To begin we know that the expectation is 
+   \[\Ex{x} =\frac{1}{2}\cdot2+\frac{1}{2}\cdot\frac{1}{2}\cdot3+\frac{1}{2}\cdot\frac{1}{2}\cdot\Ex{\text{die}}  \]
+   and since we know that $\Ex{\text{die}} = 3.5$ then 
+   \[\Ex{x} =\frac{1}{2}\cdot2+\frac{1}{2}\cdot\frac{1}{2}\cdot3+\frac{1}{2}\cdot\frac{1}{2}\cdot3.5  \]
+   and evaluating this gives us 
+   \[\boxed{\Ex{x}=2.625} \]
+  \end{problem}
+  
+  \begin{problem}
+    \begin{enumerate}
+      \item \[\ExS{x\in\chi}{\ab|f(x)|} \leq \max\limits_{x\in \chi}f(x)\]
+        Not true by counterexample: Define $\chi \coloneq {0, 1}$ and $P(0) = \frac12$ and $P(1) = \frac12$ with $f(x)$ defined as $0\mapsto -5, 1\mapsto -4$. Then 
+        \[\ExS{x\sim P}{\ab|f(x)|} = \frac12\ab|-5|+\frac12\ab|-4| = \frac12 5 + \frac12 4 = 4.5 \not\leq \max\limits_{x\in\chi}f(x) = \max\{-4, -5\} = -4\]
+      \item \[\ExS{x\sim P}{f(x)} \leq \max\limits_{x\in \chi}f(x)\]
+        Suppose $\forall x\in\chi,f(x)=c,c\in\R$. Then $\max\limits_{x\in\chi}f(x)=c$ and $\ExS{x~P}{f(x)} = \sum_{i=1}^{|X|}P(X[i])c = c$, where $|X|$ is the cardinality of the finite set $\chi$ and $X[i]$ is the $i$th number in a arbitarily ordering of the finite set $X$. Hence $\ExS{x\sim P}{f(x)} =\max\limits_{x\in \chi}f(x)$ which implies if this condition is true then this inequality holds.
+
+        Now suppose this condition is false. Then $\exists x_1,x_2\in\chi$ s.t. $f(x_1)\neq f(x_2)$. Now wlog assume $f(x_1)<f(x_2)$ and $f(x_2)=\max\limits_{x\in\chi}f(x_2)$. Then 
+        \[\ExS{x\sim P}{f(x)} = \sum_{i=1}^{|X|}P(X[i])f(X[i]) \leq P(x_1)f(x_1) + (1-P(x_1))\max\limits_{x\in\chi}f(x) < \max\limits_{x\in\chi}f(x)\]
+        Hence this is true in all cases \qed
+      \item \[\ExS{x\sim P}{f(x)} \leq \max\limits_{x\in \chi}\ab|f(x)|\]
+        Now since (b) implies 
+        \[\ExS{x\sim P}{f(x)} \leq \max\limits_{x\in \chi}f(x)\]
+        And since $\forall x\in \chi, f(x) \leq \ab|f(x)|$ implies $\max\limits_{x\in\chi}f(x) \leq \max\limits_{x\in\chi}\ab|f(x)| \implies$
+        \[\ExS{x\sim P}{f(x)} \leq \max\limits_{x\in \chi}\ab|f(x)|\qed\]
+    \end{enumerate} 
+  \end{problem}
+
+  \begin{problem}
+    Wlog suppose $\max\limits_{x\in\chi}f_1(x)=c_1, \max\limits_{x\in\chi}f_2(x)=c_2$ and $c_1\leq c_2$. Then at all $x_i\in\chi\st f_2(x_i)=c_2,\quad f_1(x_i) \leq c_1$. Suppose $\exists f_1(x_i) \st f_1(x_i)=c_1$. Then $\max\limits_{x_i}|f_2(x_i)-f_1(x_i)|$ is at least equal to $|c_2-c_1| = |\max\limits_{x\in\chi}f_2(x)-\max\limits_{x\in\chi}f_1(x)|$ if not greater which satisfies the inequality. Suppose $\not\exists f_1(x_i)\st f_1(x_i)=c_1$. Then let $c_3 = \max\limits_{x\in\chi\st f_2(x)=c_2}\implies c_3 < c_1 \implies$ that 
+    \[ \max\limits_{x_i}|f_2(x_i)-f_1(x_i)| = |c_2-c_3| \geq |c_2 -c_1| = |\max\limits_{x\in\chi}f_2(x)-\max\limits_{x\in\chi}f_1(x)| \qed \]
+  \end{problem}
+
+  \begin{problem}
+    Given that $\chi$ finite implies 
+    \[\ExS{x\sim P}{x} \coloneq \sum x_iP(x_i)\]
+    Implies that by nature of expecation linearity 
+    \[\ab|\ExS{x\sim P}{f(x)}-\ExS{x\sim P}{g(x)}| = \ab|\sum f(x_i)P(x_i) - \sum g(x_i)P(x_i)| =\]
+    \[\ab|\sum (f(x_i)-g(x_i))P(x_i)| = \ExS{x\sim P}{f(x)-g(x)} \leq \ExS{x\sim P}{\ab|f(x)-g(x)|}\]
+  \end{problem}
+
+  \section{Q3}
+  \begin{problem}
+    \begin{itemize}
+      \item True: $Nullity(A)=0 \implies Rank(A)=n-0=n$ by Rank Nullity Theorem. Full rank implies inveritiblity given square matrix.\qed
+      \item False: If such a vector exsists implies $Nullity(A) \neq 0 \implies Rank(A) < n \implies$ Not invertibile. \qed 
+      \item True: Range of $A=\R^n\implies$ Full rank which implies inveritiblity. \qed
+    \end{itemize}
+  \end{problem}
+  
+  \begin{problem}
+    \begin{itemize}
+    \item $\|Bv\|_\infty = \max_{1\leq i\leq n}|r_i^Tv|$:
+      True: Each element in $Bv$ is created by $r_i^Tv$
+    \item $\|Bv\|_\infty = \max_{1\leq i\leq n}|c_i^Tv|$ 
+      False: Each element in $Bv$ is created by $r_i^Tv$ not $c_i^Tv$
+    \item $\|Bv\|_\infty = \max_{1\leq i\leq n}|r_i^Tc_i|$ 
+      False: This definition does not have any notion of $v$ in it.
+    \item $\|Bv\|_\infty = \max_{1\leq i\leq n}|e_i^TBv|$:
+      True: $e_i^TBv$ is equivalent to plucking out the $i$th entry in the new vector $Bv$.
+    \end{itemize}
+  \end{problem}
+
+  \begin{problem}
+    $||v||_\infty = \max_{1\leq i\leq n}|v| \implies$
+
+    Suppose 
+    \[\forall i,v_i =c\in\R\implies \T{ that the } j\T{th row of }|Bv| = |\sum_{i=0}^n B_{ji}c| = |c\sum_{i=0}^nB_{ji}| \leq |c\gamma| < |c| \implies\]
+    \[||Bv||_\infty \leq |\gamma c|<|c|=||v||_\infty\]
+    Now suppose the condition is false. Then $\exists v_a,v_b\in v \st \Ts{wlog} v_a < v_b$ and $\max|v_i|=|v_b|$. Then the $j$th row of $|Bv|\leq |v_aB_{ja} + v_b(\gamma - B_{ja})| \leq |\gamma v_b| \leq v_b = \max_{1\leq i\leq n}|v|$ which implies the statment is true. 
+  
+  Thus it is true for both cases. 
+  \end{problem}
+
+  \begin{problem}
+    Now since we know that the $L$-infinity norm satisifes the reverse triangle inequality implies that
+    \[\ab| ||Iv||_\infty -||Bv||_\infty | \leq ||Iv-Bv||_\infty = ||(I-B)v||_\infty\]
+    Now since we know that $||Iv||_\infty = ||v||_\infty > ||Bv||_\infty$ implies that $\ab| ||Iv||_\infty -||Bv||_\infty | > 0 \implies ||(I-B)v||_\infty > 0$ \qed
+  \end{problem}
+
+  \begin{problem}
+    Problem 8 implies that 
+    \[||B_v||_\infty\leq |\gamma c| = |\gamma||c| = \gamma||v||_\infty\] 
+    Therefore since $||B||_\infty \leq \gamma ||v||_\infty \forall v\in\R^n$ than since $Bv= \lambda v \implies ||Bv||_\infty = ||\lambda v||_\infty$ implies that since $0 < \gamma < 1$ than all eigenvalues $\lambda\leq \gamma < 1$. This implies that the spectral radius of $B$ is less than 1 which implies that the neumann series for operator $B$, $\sum_{i=0}^\infty B^k$ converges which implies $I-B$ is always invertible \qed 
+  \end{problem}
+
+  \section{Q4}
+  \begin{problem}
+    We know that
+    \[P=\V{0.2&0.2&0.2\\0.6&0.2&0.2\\0.3&0.6&0.1},\quad p_1 = \V{0.2\\0.3\\0.5} \implies\]
+    \[p_2 = \V{0.2&0.3&0.5}\V{0.2&0.2&0.2\\0.6&0.2&0.2\\0.3&0.6&0.1} = \V{0.37&0.40&0.23}\]
+  \end{problem}
+
+  \begin{problem}
+    Knowing $p_2 \implies$
+    \[p_3=p_2P=\V{0.383&0.292&0.325} \]
+  \end{problem}
+
+  \begin{problem}
+    Given 
+    % \[P = \V{a&b&c\\d&e&f\\g&h&i}, \quad p_1 = \V{x\\y\\z} \implies \]
+    \[p_3 = p_2 P = p_1 P^2\] 
+    % \[p_3 = PPp_1 = \V{a&b&c\\d&e&f\\g&h&i}\V{a&b&c\\d&e&f\\g&h&i} \V{x\\y\\z} =\]
+    \[ \qed\]
+  \end{problem}
+  
+  \begin{problem}
+    Given $k\geq2,\quad p_k = p_1P^{k-1}$. We can calculate this efficently with diagonalization given known constants for $P$
+  \end{problem}
+\end{document}
