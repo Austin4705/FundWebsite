@@ -12,7 +12,7 @@ title:
       We are starting a VC Firm
     </p>
     <p>
-      Run by [Austin Wu](), Achyunth Vivek, Caroline Zhu, and Maxx Yung.
+      Run by <a href="https://austin-wu.com/">Austin Wu</a>, <a href="https://www.linkedin.com/in/achyuth-k-vivek-15357b326/">Achyuth Vivek</a>, <a href="https://www.linkedin.com/in/caroline-zhu-cu2026/">Caroline Zhu</a>, and <a href="https://https://www.maxxyung.com/">Maxx Yung</a>,
     </p>
     <p>
       We will reach out if you respond:

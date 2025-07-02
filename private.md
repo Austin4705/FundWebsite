@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Private 
+title: Internal Directory
 ---
+Obfuscated directory to parts of website:
 
-Links to private parts of website:
+[About](/about)
 
-fellows
+[Fellows](/fellows)
 
-about
+[Thesis](/thesis)
 
-thesis
+[Updates](/thesis)
