@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Blog
-permalink: /blog/
+title: Updates
+permalink: /updates/
 ---
 This is intended for firm updates.
 <div class="home">

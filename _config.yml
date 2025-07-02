@@ -1,13 +1,13 @@
 # Site settings
-title: [Fund title]
+title: Wu, V, Z & Co.
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   [Fund title]
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://austin-wu.com" # the base hostname & protocol for your site #TODO:
+url: "https://austin-wu.com/FundWebsite/" # the base hostname & protocol for your site #TODO:
 google_analytics: G-HNG7S83RPV #TODO:
 
-logo: "assets/pfp.jpeg"
+logo: "assets/logo.jpeg"
 social:
   name: [Fund Title]
 
@@ -48,13 +48,10 @@ sitemap:
     - "/files/private/"
     - "/files/private/**"
 
-permalink: /blog/:categories/:year/:month/:day/:title:output_ext
+permalink: /updates/:categories/:year/:month/:day/:title:output_ext
 
 header_pages:
-  - about.md
-  - thesis.md
-  - fellows.md
-  - blog.md
+  - updates.md
   - investments.md
 
 # Include PDFs from collections and posts

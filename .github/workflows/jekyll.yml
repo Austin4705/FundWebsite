@@ -14,12 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: 'recursive' # This is the important part for your templates
+          submodules: "recursive" # This is the important part for your templates
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4.4' # Choose a Ruby version compatible with your Jekyll setup
+          ruby-version: "3.4.4" # Choose a Ruby version compatible with your Jekyll setup
           bundler-cache: true # Speeds up builds by caching gems
 
       - name: Install LaTeX and Pandoc
@@ -42,16 +42,10 @@ jobs:
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
 
-      - name: Print contents of _site
-        run: |
-          ls -la ./_site
-          ls -la ./_site/private/resumes
-          ls -la ./_site/notes
-
   # Deployment job
   deploy:
     permissions:
-      pages: write   # allow the job to push to the GitHub Pages deployment
+      pages: write # allow the job to push to the GitHub Pages deployment
       id-token: write # required so deploy-pages can obtain an OIDC token
     environment:
       name: github-pages
@@ -62,3 +56,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
