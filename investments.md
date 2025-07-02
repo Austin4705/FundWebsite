@@ -2,8 +2,8 @@
 layout: page
 title: Investments
 ---
-This is a list of the investments we own:
 
-| Investment Name |
+| Investments |
 |-----------------|
 | [Judgment Labs](https://judgmentlabs.ai/)   |
+| [Judgment Labs 2](https://judgmentlabs.ai/)   |
