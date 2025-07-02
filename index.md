@@ -29,4 +29,3 @@ title:
   });
 </script>
 <br>
-*Site last updated: {{ site.time | date: '%B %d, %Y, UTC: %s' }}*
