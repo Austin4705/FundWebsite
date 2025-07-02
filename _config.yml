@@ -1,23 +1,15 @@
 # Site settings
-title: Austin Wu
+title: [Fund title]
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Cornell 2027. Applied and Engineering Physics
+  [Fund title]
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://austin-wu.com" # the base hostname & protocol for your site
-twitter_username: AustinWu_
-github_username: Austin4705
-google_analytics: G-HNG7S83RPV
+url: "https://austin-wu.com" # the base hostname & protocol for your site #TODO:
+google_analytics: G-HNG7S83RPV #TODO:
 
 logo: "assets/pfp.jpeg"
 social:
-  name: Austin Wu
-  links:
-    - https://github.com/Austin4705
-    - https://www.instagram.com/austin._.wu/
-    - https://www.linkedin.com/in/austin--wu/
-    - https://x.com/AustinWu_
-    - https://calendly.com/austin4705/scheduler
+  name: [Fund Title]
 
 # Collections
 collections:
@@ -59,11 +51,11 @@ sitemap:
 permalink: /blog/:categories/:year/:month/:day/:title:output_ext
 
 header_pages:
+  - about.md
+  - thesis.md
+  - fellows.md
   - blog.md
-  - notes.md
-  - resume.md
-  - projects.md
-  - publications.md
+  - investments.md
 
 # Include PDFs from collections and posts
 include:
@@ -98,4 +90,3 @@ kramdown:
   syntax_highlighter: rouge
   input: GFM
   hard_wrap: false
-

@@ -3,8 +3,7 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
-I will try and write useful, engaging, and insightful pieces on whatever I feel like.
-
+This is intended for firm updates.
 <div class="home">
   {%- if site.posts.size > 0 -%}
     <h2 class="note-list-heading">{{ page.list_title | default: "Posts" }}</h2>
