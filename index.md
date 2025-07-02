@@ -4,7 +4,7 @@ title:
 ---
 <div class="profile-container">
   <!-- <div class="profile-image-container">
-    <img src="assets/groupPicture.jpeg" alt="Profile Photo" class="profile-image">
+    <img src="{{ "/assets/groupPicture.jpeg" | relative_url }}" alt="Profile Photo" class="profile-image">
     <p class="profile-caption">A Photo of the Team</p>
   </div> -->
   <div class="profile-content">

@@ -52,6 +52,8 @@
 }
 
 .site-title {
+  display: flex !important;
+  align-items: center !important;
   font-size: 26px;
   font-weight: 300;
   line-height: 54px;
@@ -337,18 +339,21 @@ input:focus + .slider {
 }
 
 .logo-image {
-  max-height: 40px;
-  max-width: 80px;
-  vertical-align: middle;
-  margin-right: 10px;
-  border-radius: 8px; /* optional: gives a softer look */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* optional: subtle shadow */
+  max-height: 40px !important;
+  max-width: 80px !important;
+  width: auto !important;
+  height: auto !important;
+  vertical-align: middle !important;
+  margin-right: 10px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04) !important;
+  display: inline-block !important;
 }
 
 @media (max-width: 600px) {
   .logo-image {
-    max-height: 32px;
-    max-width: 32px;
-    margin-right: 6px;
+    max-height: 32px !important;
+    max-width: 64px !important;
+    margin-right: 6px !important;
   }
 }
