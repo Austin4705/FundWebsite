@@ -9,7 +9,7 @@ google_analytics: G-HNG7S83RPV #TODO:
 
 logo: "assets/logo.jpeg"
 social:
-  name:
+name:
 
 # Collections
 collections:
@@ -51,6 +51,10 @@ sitemap:
 permalink: /updates/:categories/:year/:month/:day/:title:output_ext
 
 header_pages:
+  - about.md
+  - thesis.md
+  - fellows.md
+  - updates.md
   - investments.md
 
 # Include PDFs from collections and posts
