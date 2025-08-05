@@ -1,13 +1,12 @@
 # Site settings
-title: WVYZ Fund
+title: Nullspace Ventures
 email:
 description: >- # this means to ignore newlines until "baseurl:"
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "arcawarehousing.com" # the base hostname & protocol for your site #TODO:
-google_analytics: G-HNG7S83RPV #TODO:
-
-logo: "assets/logo.jpeg"
+url: "nullspace.vc"
+google_analytics: G-64KMQHW19K
+logo: "assets/logo.png"
 social:
 name:
 
