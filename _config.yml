@@ -51,7 +51,7 @@ permalink: /updates/:categories/:year/:month/:day/:title:output_ext
 
 header_pages:
   - about.md
-  - thesis.md
+  # - thesis.md
   - fellows.md
   - updates.md
   - investments.md
